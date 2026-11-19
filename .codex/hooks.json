@@ -1,0 +1,38 @@
+{
+  "description": "Publishes local activity status for Dynamic Bottle",
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": ".\\.venv\\Scripts\\python.exe -X utf8 .\\codex_activity.py --hook",
+            "timeout": 3
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": ".\\.venv\\Scripts\\python.exe -X utf8 .\\codex_activity.py --hook",
+            "timeout": 3
+          }
+        ]
+      }
+    ],
+    "Interrupt": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": ".\\.venv\\Scripts\\python.exe -X utf8 .\\codex_activity.py --hook",
+            "timeout": 2
+          }
+        ]
+      }
+    ]
+  }
+}
